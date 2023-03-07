@@ -17,7 +17,6 @@ def para_string(M : np.array):
             if linha[i] == 1:
                 msg += alfabeto[i]
     return msg
-
     
 def cifrar(msg: str,P : np.array):
     msg_one_hot = para_one_hot(msg)
