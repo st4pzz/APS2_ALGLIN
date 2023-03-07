@@ -19,13 +19,20 @@ def para_string(M : np.array):
     return msg
     
 def cifrar(msg: str,P : np.array):
-    msg_one_hot = para_one_hot(msg)
-    msg_cifrada = msg_one_hot@P
+    
+    msg = para_one_hot(msg)
+    msg_cifrada = msg @ P
     return para_string(msg_cifrada)
     
 def de_cifrar(msg: str,P : np.array):
-    return
+    
+    msg = para_one_hot(msg)
+    msg_decifrada = msg @ P.T
+    return para_string(msg_decifrada)
+    
+    
 def enigma(msg: str, P : np.array, E : np.array):
     return
+
 def de_enigma(msg: str, P : np.array, E : np.array):
     return
