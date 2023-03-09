@@ -2,8 +2,6 @@
 
 Esse é um projeto da matéria de Algebra Linear e Teoria da Informação do Insper para o curso de Ciência da Computação.
 
-## Integrantes
-Ale Wever e Sergio Ramella
 
 ## Descrição do Projeto
 O projeto consiste em reproduzir, com funções em python e manipulação de matrizes, a máquina enigma de codificação de mensagens feita pelos alemães na Segunda Guerra Mundial. 
@@ -32,12 +30,54 @@ A função decifrar recebe uma string e uma matriz permutação,primeiramente a 
 ### Função enigma
 A função enigma recebe uma string e uma lista de matrizes de zeros e uns, e retorna uma string, onde cada letra da string é representada por uma linha da matriz, e cada coluna da matriz representa uma letra do alfabeto. A letra da string é representada por um 1 na coluna correspondente a ela no alfabeto, e 0 nas demais colunas.
 
-A função enigma recebe uma string, uma matriz permutação e uma matriz auxiliar. 
+A função enigma recebe uma string, uma matriz permutação e uma matriz auxiliar. Para cada coluna da matriz da mensagem recebida é feito uma multiplicação com a matriz permutação n vezes e pela matriz auxiliar n+1 vezes, onde n é o número da coluna da matriz da mensagem recebida. Depois, a matriz resultante é transformada em string com a função para_string e essa nova string é retornada. 
 
 ### Função de_enigma
 A função de_enigma recebe uma string e uma lista de matrizes de zeros e uns, e retorna uma string, onde cada letra da string é representada por uma linha da matriz, e cada coluna da matriz representa uma letra do alfabeto. A letra da string é representada por um 1 na coluna correspondente a ela no alfabeto, e 0 nas demais colunas.
 
+A função de_enigma recebe uma string, uma matriz permutação e uma matriz auxiliar. Para cada coluna da matriz da mensagem recebida é feito uma multiplicação com a matriz inversa da matriz permutação n vezes e pela matriz inversa da matriz auxiliar n+1 vezes,com o intuito de chegar novamente a matriz original. Depois, a matriz resultante é transformada em string com a função para_string e essa nova string é retornada.
+
 ## Como rodar o projeto
 Para rodar o projeto e testar cada função, basta acessar e rodar o arquivo demo.py, nesse arquivo você pode visualizar cada passo da codificação e decodificação de uma mensagem.
 
-O arquivo app.py é onde está a api do projeto, feita com o framework Flask, para rodar a api basta rodar o arquivo app.py e acessar o link do servidor local. A aplicação recebe uma mensagem através do metodo POST e retorna a mensagem codificada e decodificada.
+
+## Documentação da API
+
+#### Retorna a mensagem codificada através da função enigma
+
+```http
+  POST /post/enigma
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `mensagem` | `json` | retorna a mensagem codificada |
+
+#### Retorna um item
+
+```http
+  POST /post/de-enigma
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `mensagem codificada`      | `json` | retorna a mensagem decodificada |
+
+
+
+
+## Instalação
+
+Instale my-project com npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+    
+## Autores
+
+- [@st4pzz](https://github.com/st4pzz)
+- [@WeeeverAlex](https://github.com/WeeeverAlex)
+
+

@@ -38,10 +38,10 @@ def de_cifrar(msg: str,P : np.array):
 
 #Uma função enigma(msg : str, P : np.array, E : np.array) que faz a cifra enigma na mensagem de entrada usando o cifrador P e o cifrador auxiliar E, ambos representados como matrizes de permutação.
 def enigma(msg: str, P : np.array, E : np.array):
-    
+    tamanho = len(msg)
     msg = para_one_hot(msg)
     lista = list()
-    for i in range(len(msg)):
+    for i in range(tamanho):
         j = msg[:,i].T
         a = P@j
         for _ in range(i+1):
@@ -52,16 +52,16 @@ def enigma(msg: str, P : np.array, E : np.array):
 
 #Uma função de_enigma(msg : str, P : np.array, E : np.array) que recupera uma mensagem cifrada como enigma assumindo que ela foi cifrada com o usando o cifrador P e o cifrador auxiliar E, ambos representados como matrizes de permutação.
 def de_enigma(msg: str, P : np.array, E : np.array):
-    
+    tamanho = len(msg)
     msg = para_one_hot(msg)
     lista = list()
-    
-    for i in range(len(msg)):
+    e_ = np.linalg.inv(E)
+    p_ = np.linalg.inv(P)
+    for i in range(tamanho):
         j = msg[:,i].transpose()
         for _ in range(i+1):
-            j = np.linalg.solve(E,j)
-        a = np.linalg.solve(P,j)
+            j = e_@j
+        a = p_@j
         lista.append(a)
-        
     de_enigma = np.array(lista).T
     return para_string(de_enigma)
