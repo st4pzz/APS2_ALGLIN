@@ -1,6 +1,6 @@
 import numpy as np
 
-#implemntando alfebeto e encoder
+#implementando alfabeto e encoder
 alfabeto = 'abcdefghijklmnopqrstuvwxyz ãé,.'
 alfabeto_identidade = np.identity(len(alfabeto))
 encoder = np.roll(alfabeto_identidade,-2,1)
@@ -32,16 +32,16 @@ def cifrar(msg: str,P : np.array):
 #Uma função de_cifrar(msg : str, P : np.array) que recupera uma mensagem cifrada, recebida como entrada, e retorna a mensagem original. P é a matriz de permutação que realiza a cifra.
 def de_cifrar(msg: str,P : np.array):
     msg = para_one_hot(msg)
-    P_ = np.linalg.inv(P)
-    msg_decifrada = P_ @ msg
+    
+    msg_decifrada = np.linalg.solve(P,msg)
     return para_string(msg_decifrada)
 
 #Uma função enigma(msg : str, P : np.array, E : np.array) que faz a cifra enigma na mensagem de entrada usando o cifrador P e o cifrador auxiliar E, ambos representados como matrizes de permutação.
 def enigma(msg: str, P : np.array, E : np.array):
-    tamanho = len(msg)
+    
     msg = para_one_hot(msg)
     lista = list()
-    for i in range(tamanho):
+    for i in range(len(msg)):
         j = msg[:,i].T
         a = P@j
         for _ in range(i+1):
@@ -52,16 +52,16 @@ def enigma(msg: str, P : np.array, E : np.array):
 
 #Uma função de_enigma(msg : str, P : np.array, E : np.array) que recupera uma mensagem cifrada como enigma assumindo que ela foi cifrada com o usando o cifrador P e o cifrador auxiliar E, ambos representados como matrizes de permutação.
 def de_enigma(msg: str, P : np.array, E : np.array):
-    tamanho = len(msg)
+    
     msg = para_one_hot(msg)
     lista = list()
-    e_ = np.linalg.inv(E)
-    p_ = np.linalg.inv(P)
-    for i in range(tamanho):
+    
+    for i in range(len(msg)):
         j = msg[:,i].transpose()
         for _ in range(i+1):
-            j = e_@j
-        a = p_@j
+            j = np.linalg.solve(E,j)
+        a = np.linalg.solve(P,j)
         lista.append(a)
+        
     de_enigma = np.array(lista).T
     return para_string(de_enigma)

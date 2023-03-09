@@ -16,46 +16,46 @@ print("-> testando one_hot, para_string, cifrar e de_cifrar com a mensagem 'eu s
 print()
 
 #one_hot
-msg = 'eu sou o goku'
-one_hot = para_one_hot(msg)
-print(Fore.BLUE + "one_hot:" + Style.RESET_ALL)
-print()
-print(one_hot)
-print()
-#para_string\
-msg = "eu sou o goku"
-one_hot = para_one_hot(msg)
-msg = para_string(one_hot)
-print(Fore.BLUE + "para_string:" + Style.RESET_ALL)
-print()
-print(msg)
-print()
+# msg = 'eu sou o goku'
+# one_hot = para_one_hot(msg)
+# print(Fore.BLUE + "one_hot:" + Style.RESET_ALL)
+# print()
+# print(one_hot)
+# print()
 
-#cifrar
-msg = "eu sou o goku"
-one_hot = para_one_hot(msg)
-msg_cifrada = cifrar(msg,encoder)
-print(Fore.BLUE + "cifrar:" + Style.RESET_ALL)
-print()
-print(msg_cifrada)
-print()
+# msg = "gay"
+# one_hot = para_one_hot(msg)
+# msg = para_string(one_hot)
+# print(Fore.BLUE + "para_string:" + Style.RESET_ALL)
+# print()
+# print(msg)
+# print()
+
+# cifrar
+# msg = "eu sou o goku"
+# one_hot = para_one_hot(msg)
+# msg_cifrada = cifrar(msg,encoder)
+# print(Fore.BLUE + "cifrar:" + Style.RESET_ALL)
+# print()
+# print(msg_cifrada)
+# print()
 
 #de_cifrar
-msg = "eu sou o goku"
-one_hot = para_one_hot(msg)
-msg_cifrada = cifrar(msg,encoder)
-msg_decifrada = de_cifrar(msg_cifrada,encoder)
-print(Fore.BLUE + "de_cifrar:" + Style.RESET_ALL)
-print()
-print(msg_decifrada)
-print()
+# msg = "eu sou o goku"
+# one_hot = para_one_hot(msg)
+# msg_cifrada = cifrar(msg,encoder)
+# msg_decifrada = de_cifrar(msg_cifrada,encoder)
+# print(Fore.BLUE + "de_cifrar:" + Style.RESET_ALL)
+# print()
+# print(msg_decifrada)
+# print()
 
-print()
-print(Fore.RED + "FUNCOES: enigma, de_enigma" + Style.RESET_ALL)
-print(Fore.RED +"-----------------------------------------------------" + Style.RESET_ALL)
-print()
-print("-> testando enigma e de_enigma com a mensagem 'eu estou com fome'")
-print()
+# print()
+# print(Fore.RED + "FUNCOES: enigma, de_enigma" + Style.RESET_ALL)
+# print(Fore.RED +"-----------------------------------------------------" + Style.RESET_ALL)
+# print()
+# print("-> testando enigma e de_enigma com a mensagem 'eu estou com fome'")
+# print()
 #enigma
 msg = "eu estou com fome"
 one_hot = para_one_hot(msg)
@@ -66,14 +66,14 @@ print()
 print(msg_enigma)
 print()
 #de_enigma
-msg = "eu estou com fome"
-one_hot = para_one_hot(msg)
-msg_cifrada = cifrar(msg,encoder)
-msg_enigma = enigma(msg,encoder,segundo_encoder)
-msg_de_enigma = de_enigma(msg_enigma,encoder,segundo_encoder)
-print(Fore.BLUE + "de_enigma:" + Style.RESET_ALL)
-print()
-print(msg_de_enigma)
-print()
+# msg = "eu estou com fome"
+# one_hot = para_one_hot(msg)
+# msg_cifrada = cifrar(msg,encoder)
+# msg_enigma = enigma(msg,encoder,segundo_encoder)
+# msg_de_enigma = de_enigma(msg_enigma,encoder,segundo_encoder)
+# print(Fore.BLUE + "de_enigma:" + Style.RESET_ALL)
+# print()
+# print(msg_de_enigma)
+# print()
 
 
