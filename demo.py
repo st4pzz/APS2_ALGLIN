@@ -1,4 +1,4 @@
-from funcoes import para_one_hot,para_string,cifrar, de_cifrar, enigma, de_enigma
+from enigma import para_one_hot,para_string,cifrar, de_cifrar, enigma, de_enigma
 import numpy as np
 from colorama import init, Fore, Style
 

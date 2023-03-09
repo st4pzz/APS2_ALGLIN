@@ -1,0 +1,7 @@
+README.md
+enigma.py
+setup.py
+enigma.egg-info/PKG-INFO
+enigma.egg-info/SOURCES.txt
+enigma.egg-info/dependency_links.txt
+enigma.egg-info/top_level.txt

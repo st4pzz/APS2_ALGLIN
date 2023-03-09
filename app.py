@@ -1,5 +1,5 @@
 from flask import Flask,request
-from funcoes import enigma,de_enigma
+from enigma import enigma,de_enigma
 import numpy as np
 
 app = Flask(__name__)
