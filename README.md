@@ -63,7 +63,8 @@ Para rodar o projeto e testar cada função, basta acessar e rodar o arquivo dem
 | :---------- | :--------- | :------------------------------------------ |
 | `mensagem codificada`      | `json` | retorna a mensagem decodificada |
 
-
+## Como testar a api
+Para rodar a api basta acessar o arquivo teste_api.ipynb e rodar a primeira célula para rodar as funções que acessam a api, em seguida rode as outras duas células que contém os testes das rotas /post/enigma e /post/de-enigma , que retornam as mensagens codificadas e decodificadas respectivamente.
 
 
 ## Instalação
