@@ -1,7 +1,7 @@
 import numpy as np
-__version__ = '2.4'
 
-#implementando alfabeto e encoder
+#implemntando alfebeto e encoder
+
 alfabeto = 'abcdefghijklmnopqrstuvwxyz ãé,.'
 alfabeto_identidade = np.identity(len(alfabeto))
 encoder = np.roll(alfabeto_identidade,-2,1)
@@ -33,6 +33,7 @@ def cifrar(msg: str,P : np.array):
 #Uma função de_cifrar(msg : str, P : np.array) que recupera uma mensagem cifrada, recebida como entrada, e retorna a mensagem original. P é a matriz de permutação que realiza a cifra.
 def de_cifrar(msg: str,P : np.array):
     msg = para_one_hot(msg)
+
     
     msg_decifrada = np.linalg.solve(P,msg)
     return para_string(msg_decifrada)
