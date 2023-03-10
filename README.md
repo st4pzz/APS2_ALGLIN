@@ -68,11 +68,11 @@ Para rodar o projeto e testar cada função, basta acessar e rodar o arquivo dem
 
 ## Instalação
 
-Instale my-project com npm
+Instale insper_enigma com pip
 
 ```bash
-  npm install my-project
-  cd my-project
+  pip install git+https://github.com/st4pzz/package_enigma
+  from insper_enigma import *
 ```
     
 ## Autores
